@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <style>
+        @keyframes color{10%{color:red}40%{color:green}70%{color:blue}}
+    </style>
+</head>
+<body>
+    <h1 style="animation:color 2s linear infinite;" >
+        CodeLearn.vn
+    </h1>
+    <h3>Filtering input text ng-repeat 
+        value according to ng-model
+    </h3>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>Type a programing language name 
+            in the input field
+        </p>
+        <p><input type="text" ng-model="testfilter"></p><!--Khai báo filter là testfilter-->
+        <p>Filter show the names of only the matching programing 
+            language after capitalizing aech language by applying 
+            filter. 
+        </p>
+        <ul>
+            <li ng-repeat="x in programminglanguagenames| filter:testfilter"><!--filter được áp dụng vào mảng programming..-->
+                {{x | myfilter}}
+            </li>
+        </ul>
+    </div>
+    
+    <script src="demosearch.js"></script>
+</body>
+</html>
